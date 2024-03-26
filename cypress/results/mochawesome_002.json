@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-03-26T15:12:52.840Z",
+    "end": "2024-03-26T15:12:56.017Z",
+    "duration": 3177,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dfbed400-6c8b-42b4-87ec-ddc69acf2549",
+      "title": "",
+      "fullFile": "cypress/e2e/conduitApp/article.cy.js",
+      "file": "cypress/e2e/conduitApp/article.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90cac4d7-fabd-4196-81bc-3b5058fdfef5",
+          "title": "Articles page tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Article",
+              "fullTitle": "Articles page tests Add Article",
+              "timedOut": null,
+              "duration": 3103,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// articlePage.navigateToArticlePage()\narticlePage.addArticle(\"Test Article\", \"Cypress\", \"About Cypress\", \"Cypress\");",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Request failed with status code 401\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Request failed with status code 401\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at createError (webpack-internal:///./node_modules/axios/lib/core/createError.js:16:15)\n    at settle (webpack-internal:///./node_modules/axios/lib/core/settle.js:17:12)\n    at XMLHttpRequest.handleLoad (webpack-internal:///./node_modules/axios/lib/adapters/xhr.js:61:7)",
+                "diff": null
+              },
+              "uuid": "b229810f-7985-416c-b8a1-af9a348af2de",
+              "parentUUID": "90cac4d7-fabd-4196-81bc-3b5058fdfef5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b229810f-7985-416c-b8a1-af9a348af2de"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3103,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-26T15:13:26.867Z",
+    "end": "2024-03-26T15:13:40.369Z",
+    "duration": 13502,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b0261bff-be2d-47a7-b63a-1ed6fee16042",
+      "title": "",
+      "fullFile": "cypress/e2e/multiple-tabs/multiple-tab.cy.js",
+      "file": "cypress/e2e/multiple-tabs/multiple-tab.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f73913b8-349e-46f6-b224-c3faccfd6c48",
+          "title": "Multiple Tab Handling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify multiple tab support",
+              "fullTitle": "Multiple Tab Handling Verify multiple tab support",
+              "timedOut": null,
+              "duration": 9739,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(\"a\", \"Click Here\").should(\"have.attr\", \"target\").and(\"equal\", \"_blank\");\ncy.contains(\"a\", \"Click Here\").should(\"have.attr\", \"href\").and(\"equal\", \"https://qatechhub.com\");\ncy.contains(\"a\", \"Click Here\").invoke(\"removeAttr\", \"target\").click();",
+              "err": {},
+              "uuid": "c9ad9b18-b153-4e40-8509-e7cf4bf412b2",
+              "parentUUID": "f73913b8-349e-46f6-b224-c3faccfd6c48",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c9ad9b18-b153-4e40-8509-e7cf4bf412b2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9739,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

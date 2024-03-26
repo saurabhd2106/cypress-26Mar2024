@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-26T15:13:18.607Z",
+    "end": "2024-03-26T15:13:24.651Z",
+    "duration": 6044,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fbaec64f-f106-47c7-8cff-b05ed4b621c0",
+      "title": "",
+      "fullFile": "cypress/e2e/intercept-calls/intercept.cy.js",
+      "file": "cypress/e2e/intercept-calls/intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "550a8fcd-1432-4663-84fa-2ffd97da2996",
+          "title": "Intercepting calls",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Intercept Tags call",
+              "fullTitle": "Intercepting calls Intercept Tags call",
+              "timedOut": null,
+              "duration": 1325,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Starting the intercept\ncy.intercept({\n  method: 'GET',\n  url: \"**/api/tags\"\n}, {\n  fixture: \"tagsResponse.json\"\n}).as(\"tagsApi\");\n//Perform Action\ncy.visit(\"/\");\ncy.wait(\"@tagsApi\");\ncy.get(\"@tagsApi\").then(function (xhr) {\n  expect(xhr.response.body.tags).to.contain(\"selenium\");\n});",
+              "err": {},
+              "uuid": "985943f0-4cf0-4c8b-822f-0dffd80ed217",
+              "parentUUID": "550a8fcd-1432-4663-84fa-2ffd97da2996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Server error code",
+              "fullTitle": "Intercepting calls Verify Server error code",
+              "timedOut": null,
+              "duration": 1099,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Starting the intercept\ncy.intercept({\n  method: 'GET',\n  url: \"**/api/tags\"\n}, {\n  statusCode: 500\n}).as(\"tagsApi\");\n//Perform Action\ncy.visit(\"/\");\ncy.wait(\"@tagsApi\");\ncy.get(\"@tagsApi\").then(function (xhr) {\n  expect(xhr.response.statusCode).to.equal(500);\n});",
+              "err": {},
+              "uuid": "eb28e2d2-d710-4057-9dbe-c1639bdd0179",
+              "parentUUID": "550a8fcd-1432-4663-84fa-2ffd97da2996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Modify Request using intercept",
+              "fullTitle": "Intercepting calls Modify Request using intercept",
+              "timedOut": null,
+              "duration": 3430,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Start Intercept\ncy.intercept({\n  method: 'POST',\n  url: '**/api/articles'\n}, function (req) {\n  req.body.article.tagList = [\"Cypress\", \"test automation\", \"Selenium\"];\n}).as(\"productApi\");\ncy.visit(\"/user/login\");\n_loginpage.loginpage.loginToApplication(\"saurabh@fake.com\", \"fake\");\n_articlespage.articlePage.navigateToArticlePage();\n_articlespage.articlePage.addArticle(\"Test Article\", \"Cypress\", \"About Cypress\", \"Cypress\");\ncy.wait(\"@productApi\").then(function (xhr) {\n  expect(xhr.response.body.article.tagList).to.contain(\"Selenium\");\n  console.log(xhr);\n});",
+              "err": {},
+              "uuid": "9f2ff327-eeef-4826-b42c-0774122faf7b",
+              "parentUUID": "550a8fcd-1432-4663-84fa-2ffd97da2996",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "985943f0-4cf0-4c8b-822f-0dffd80ed217",
+            "eb28e2d2-d710-4057-9dbe-c1639bdd0179",
+            "9f2ff327-eeef-4826-b42c-0774122faf7b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5854,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
